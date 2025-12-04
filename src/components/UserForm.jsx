@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Toast from "./Toast";
 
 export default function UserForm({ type }) {
   const navigate = useNavigate();
@@ -7,47 +9,73 @@ export default function UserForm({ type }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
-  const [error, setError] = useState("");
+  const [toast, setToast] = useState({ message: "", type: "info" });
 
-  const handleSubmit = (e) => {
+  const API_URL = "http://localhost:3000/users";
+
+  const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
+  const validatePassword = (pass) => pass.length >= 6;
+
+  const handleToast = (msg, type = "info") => {
+    setToast({ message: msg, type });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
-
-    let users = JSON.parse(localStorage.getItem("users")) || [];
 
     if (type === "register") {
       if (!email || !name || !password || !confirm) {
-        setError("Vui lòng điền đủ thông tin");
-        return;
+        return handleToast("Vui lòng điền đủ thông tin!", "error");
       }
-      if (password !== confirm) {
-        setError("Mật khẩu xác nhận không khớp");
-        return;
+      if (!validateEmail(email)) return handleToast("Email không hợp lệ!", "error");
+      if (!validatePassword(password)) return handleToast("Mật khẩu ít nhất 6 ký tự!", "error");
+      if (password !== confirm) return handleToast("Mật khẩu xác nhận không khớp!", "error");
+
+      try {
+        const check = await axios.get(`${API_URL}?email=${email}`);
+        if (check.data.length > 0) return handleToast("Email đã tồn tại!", "error");
+
+        const newUser = {
+          name,
+          email,
+          password,
+          role: "user",
+          avatar: `https://api.dicebear.com/7.x/thumbs/svg?seed=${email}`,
+        };
+
+        await axios.post(API_URL, newUser);
+        handleToast("Đăng ký thành công! Đang chuyển tới đăng nhập...", "success");
+
+        setTimeout(() => navigate("/login"), 1500);
+      } catch {
+        handleToast("Lỗi kết nối server!", "error");
       }
-      if (users.find(u => u.email === email)) {
-        setError("Email đã tồn tại");
-        return;
-      }
-      users.push({ email, name, password, role: "user" });
-      localStorage.setItem("users", JSON.stringify(users));
-      alert("Đăng ký thành công, mời đăng nhập!");
-      navigate("/login");
     } else if (type === "login") {
-      const user = users.find(u => u.email === email && u.password === password);
-      if (!user) {
-        setError("Email hoặc mật khẩu không đúng");
-        return;
+      if (!email || !password) return handleToast("Vui lòng nhập email và mật khẩu!", "error");
+
+      try {
+        const res = await axios.get(`${API_URL}?email=${email}&password=${password}`);
+        if (res.data.length === 0) return handleToast("Email hoặc mật khẩu không đúng!", "error");
+
+        const user = res.data[0];
+        localStorage.setItem("currentUser", JSON.stringify(user));
+        window.dispatchEvent(new Event("storage"));
+
+        handleToast(`Xin chào ${user.name}!`, "success");
+        setTimeout(() => {
+          if (user.role === "admin") navigate("/admin");
+          else navigate("/");
+        }, 1200);
+      } catch {
+        handleToast("Lỗi kết nối server!", "error");
       }
-      localStorage.setItem("currentUser", JSON.stringify(user));
-      alert(`Xin chào ${user.name}`);
-      if(user.role === "admin") navigate("/admin");
-      else navigate("/");
     }
   };
 
   return (
     <div className="userform-container">
       <h2>{type === "login" ? "Đăng nhập" : "Đăng ký"}</h2>
+
       <form onSubmit={handleSubmit} className="userform">
         {type === "register" && (
           <input
@@ -77,18 +105,27 @@ export default function UserForm({ type }) {
             onChange={(e) => setConfirm(e.target.value)}
           />
         )}
-        {error && <p className="error-msg">{error}</p>}
-        <button type="submit">{type === "login" ? "Đăng nhập" : "Đăng ký"}</button>
+
+        <button type="submit" className="btn-submit">
+          {type === "login" ? "Đăng nhập" : "Đăng ký"}
+        </button>
       </form>
+
       {type === "login" ? (
-        <p>
+        <p className="switch-form">
           Chưa có tài khoản? <a href="/register">Đăng ký</a>
         </p>
       ) : (
-        <p>
+        <p className="switch-form">
           Đã có tài khoản? <a href="/login">Đăng nhập</a>
         </p>
       )}
+
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        onClose={() => setToast({ message: "", type: "info" })}
+      />
     </div>
   );
 }

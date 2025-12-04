@@ -1,0 +1,445 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "email": "admin@eventhub.com",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "Nguyen Van A",
+      "email": "a@gmail.com",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "name": "Tran Minh B",
+      "email": "b@gmail.com",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "4",
+      "name": "Pham Thi C",
+      "email": "c@gmail.com",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "6bc7",
+      "name": "vvvvv11",
+      "email": "admin1@eventhub.com",
+      "password": "123456",
+      "role": "user",
+      "avatar": "https://api.dicebear.com/7.x/thumbs/svg?seed=admin1@eventhub.com"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Workshop"
+    },
+    {
+      "id": "2",
+      "name": "Hội thảo"
+    },
+    {
+      "id": "3",
+      "name": "Concert"
+    },
+    {
+      "id": "4",
+      "name": "Tech Talk"
+    },
+    {
+      "id": "5",
+      "name": "Khóa học"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "title": "Workshop ReactJS từ A-Z",
+      "categoryId": 1,
+      "location": "Học viện Công nghệ BCVT - CS1",
+      "date": "2025-01-20",
+      "time": "08:00",
+      "price": 150000,
+      "totalSeats": 100,
+      "availableSeats": 72,
+      "thumbnail": "https://img-c.udemycdn.com/course/750x422/4467252_61d1_3.jpg",
+      "description": "Khóa học thực hành ReactJS từ cơ bản đến nâng cao.",
+      "speaker": "Nguyễn Minh Khoa",
+      "featured": true
+    },
+    {
+      "id": "2",
+      "title": "Tech Talk: AI & Tương lai CNTT",
+      "categoryId": 4,
+      "location": "Học viện Công nghệ BCVT - Hội trường lớn",
+      "date": "2025-02-05",
+      "time": "09:30",
+      "price": 0,
+      "totalSeats": 300,
+      "availableSeats": 259,
+      "thumbnail": "https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg",
+      "description": "Buổi chia sẻ về xu hướng AI, ML và các công nghệ mới.",
+      "speaker": "TS. Lê Văn Thịnh",
+      "featured": true
+    },
+    {
+      "id": "3",
+      "title": "Concert: Đêm Nhạc Mùa Xuân",
+      "categoryId": 3,
+      "location": "Trung tâm Hội nghị Quốc gia",
+      "date": "2025-03-12",
+      "time": "19:00",
+      "price": 350000,
+      "totalSeats": 1000,
+      "availableSeats": 950,
+      "thumbnail": "https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg",
+      "description": "Đêm nhạc hội tụ nhiều ca sĩ trẻ nổi tiếng.",
+      "speaker": "Nhiều nghệ sĩ",
+      "featured": false
+    },
+    {
+      "id": "4",
+      "title": "Hội thảo An toàn Thông tin 2025",
+      "categoryId": 2,
+      "location": "Học viện Công nghệ BCVT",
+      "date": "2025-04-18",
+      "time": "14:00",
+      "price": 50000,
+      "totalSeats": 200,
+      "availableSeats": 180,
+      "thumbnail": "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg",
+      "description": "Cập nhật xu hướng ATTT và bảo mật hệ thống.",
+      "speaker": "PGS.TS Nguyễn Văn Bình",
+      "featured": false
+    },
+    {
+      "id": "5",
+      "title": "Workshop UI/UX Figma Pro",
+      "categoryId": 1,
+      "location": "TP HCM",
+      "date": "2025-05-14",
+      "time": "09:00",
+      "price": 120000,
+      "totalSeats": 80,
+      "availableSeats": 60,
+      "thumbnail": "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg",
+      "description": "Thiết kế giao diện chuyên nghiệp bằng Figma.",
+      "speaker": "Trần Hoàng My",
+      "featured": true
+    },
+    {
+      "id": "6",
+      "title": "Tech Talk: Cybersecurity Trends",
+      "categoryId": 4,
+      "location": "ĐH Bách Khoa",
+      "date": "2025-04-02",
+      "time": "13:30",
+      "price": 30000,
+      "totalSeats": 250,
+      "availableSeats": 230,
+      "thumbnail": "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg",
+      "description": "Xu hướng bảo mật mới nhất năm 2025.",
+      "speaker": "Nguyễn Đức Thắng",
+      "featured": false
+    },
+    {
+      "id": "7",
+      "title": "EDM Festival – Summer Night",
+      "categoryId": 3,
+      "location": "TP HCM",
+      "date": "2025-06-22",
+      "time": "20:00",
+      "price": 450000,
+      "totalSeats": 5000,
+      "availableSeats": 4970,
+      "thumbnail": "https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg",
+      "description": "Sự kiện EDM lớn nhất năm!",
+      "speaker": "DJ Snake, Martin Garrix",
+      "featured": false
+    },
+    {
+      "id": "8",
+      "title": "Khóa học Python Fullstack",
+      "categoryId": 5,
+      "location": "Online",
+      "date": "2025-07-01",
+      "time": "18:00",
+      "price": 990000,
+      "totalSeats": 200,
+      "availableSeats": 150,
+      "thumbnail": "https://images.pexels.com/photos/1181670/pexels-photo-1181670.jpeg",
+      "description": "Khóa học từ cơ bản đến nâng cao.",
+      "speaker": "Hoàng Trung Kiên",
+      "featured": false
+    },
+    {
+      "id": "10",
+      "title": "Concert Acoustic Chill",
+      "categoryId": 3,
+      "location": "Đà Nẵng",
+      "date": "2025-09-20",
+      "time": "20:00",
+      "price": 200000,
+      "totalSeats": 700,
+      "availableSeats": 690,
+      "thumbnail": "https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg",
+      "description": "Đêm nhạc Acoustic thư giãn bên bờ biển.",
+      "speaker": "Nhiều nghệ sĩ",
+      "featured": false
+    },
+    {
+      "id": "11",
+      "title": "Workshop Lập trình Web NodeJS",
+      "categoryId": 1,
+      "location": "Hà Nội",
+      "date": "2025-10-11",
+      "time": "08:30",
+      "price": 180000,
+      "totalSeats": 120,
+      "availableSeats": 110,
+      "thumbnail": "https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg",
+      "description": "Lập trình backend hiện đại bằng NodeJS.",
+      "speaker": "Nguyễn Đức Anh",
+      "featured": true
+    },
+    {
+      "id": "12",
+      "title": "Khóa học Data Analyst",
+      "categoryId": 5,
+      "location": "Online",
+      "date": "2025-11-15",
+      "time": "19:00",
+      "price": 1250000,
+      "totalSeats": 150,
+      "availableSeats": 130,
+      "thumbnail": "https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg",
+      "description": "Học phân tích dữ liệu chuyên sâu.",
+      "speaker": "Trần Quang Huy",
+      "featured": false
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": 2,
+      "eventId": 1,
+      "quantity": 2,
+      "totalPrice": 300000,
+      "status": "confirmed",
+      "bookingCode": "ABC123",
+      "createdAt": "2025-01-10T14:20:00"
+    },
+    {
+      "id": "2",
+      "userId": 3,
+      "eventId": 3,
+      "quantity": 1,
+      "totalPrice": 350000,
+      "status": "pending",
+      "bookingCode": "ZXY777",
+      "createdAt": "2025-02-22T10:14:00"
+    },
+    {
+      "id": "f87d",
+      "userId": 2,
+      "eventId": "1",
+      "quantity": 1,
+      "totalPrice": 150000,
+      "status": "pending",
+      "bookingCode": "MLXYHX",
+      "createdAt": "2025-12-04T08:25:40.269Z"
+    },
+    {
+      "id": "e055",
+      "userId": 2,
+      "eventId": "1",
+      "quantity": 1,
+      "totalPrice": 150000,
+      "status": "pending",
+      "bookingCode": "XJLLM1",
+      "createdAt": "2025-12-04T08:25:59.773Z"
+    },
+    {
+      "id": "d1d0",
+      "userId": 2,
+      "eventId": "2",
+      "quantity": 1,
+      "totalPrice": 0,
+      "status": "pending",
+      "bookingCode": "50DWHV",
+      "createdAt": "2025-12-04T08:27:19.269Z"
+    },
+    {
+      "id": "6b0f",
+      "userId": "6bc7",
+      "eventId": "1",
+      "quantity": 1,
+      "totalPrice": 150000,
+      "status": "pending",
+      "bookingCode": "P5I07V",
+      "createdAt": "2025-12-04T08:37:37.421Z"
+    },
+    {
+      "id": "e1d2",
+      "userId": "6bc7",
+      "eventId": "2",
+      "quantity": 1,
+      "totalPrice": 0,
+      "status": "pending",
+      "bookingCode": "10Q0YV",
+      "createdAt": "2025-12-04T08:39:37.028Z"
+    },
+    {
+      "id": "a7d0",
+      "userId": "1",
+      "eventId": "1",
+      "quantity": 2,
+      "totalPrice": 300000,
+      "status": "pending",
+      "bookingCode": "2QRHSG",
+      "createdAt": "2025-12-04T09:00:27.365Z"
+    },
+    {
+      "id": "d2c5",
+      "userId": "6bc7",
+      "eventId": "2",
+      "quantity": 1,
+      "totalPrice": 0,
+      "status": "pending",
+      "bookingCode": "S2NSGF",
+      "createdAt": "2025-12-04T09:03:09.340Z"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "1",
+      "orderId": 1,
+      "eventId": 1,
+      "userId": 2,
+      "qrCode": "QRCODE_ABC123_1",
+      "status": "unused"
+    },
+    {
+      "id": "2",
+      "orderId": 1,
+      "eventId": 1,
+      "userId": 2,
+      "qrCode": "QRCODE_ABC123_2",
+      "status": "unused"
+    },
+    {
+      "id": "3",
+      "orderId": 2,
+      "eventId": 3,
+      "userId": 3,
+      "qrCode": "QRCODE_ZXY777_1",
+      "status": "used"
+    },
+    {
+      "id": "ecd1",
+      "orderId": "f87d",
+      "eventId": "1",
+      "userId": 2,
+      "qrCode": "QRCODE_MLXYHX_1",
+      "status": "unused"
+    },
+    {
+      "id": "5340",
+      "orderId": "e055",
+      "eventId": "1",
+      "userId": 2,
+      "qrCode": "QRCODE_XJLLM1_1",
+      "status": "unused"
+    },
+    {
+      "id": "47f1",
+      "orderId": "d1d0",
+      "eventId": "2",
+      "userId": 2,
+      "qrCode": "QRCODE_50DWHV_1",
+      "status": "unused"
+    },
+    {
+      "id": "93c5",
+      "eventId": "1",
+      "userId": "6bc7",
+      "status": "unused",
+      "qrCode": "QRCODE_1764837102781_0"
+    },
+    {
+      "id": "5f5a",
+      "eventId": "1",
+      "userId": "6bc7",
+      "status": "unused",
+      "qrCode": "QRCODE_1764837108285_0"
+    },
+    {
+      "id": "c553",
+      "eventId": "1",
+      "userId": "6bc7",
+      "orderId": "6b0f",
+      "status": "unused",
+      "qrCode": "QRCODE_P5I07V_1"
+    },
+    {
+      "id": "bf1c",
+      "eventId": "2",
+      "userId": "6bc7",
+      "orderId": "e1d2",
+      "status": "unused",
+      "qrCode": "QRCODE_10Q0YV_1"
+    },
+    {
+      "id": "b6a1",
+      "eventId": "1",
+      "userId": "1",
+      "orderId": "a7d0",
+      "status": "unused",
+      "qrCode": "QRCODE_2QRHSG_1"
+    },
+    {
+      "id": "26bd",
+      "eventId": "1",
+      "userId": "1",
+      "orderId": "a7d0",
+      "status": "unused",
+      "qrCode": "QRCODE_2QRHSG_2"
+    },
+    {
+      "id": "6158",
+      "eventId": "2",
+      "userId": "6bc7",
+      "orderId": "d2c5",
+      "status": "unused",
+      "qrCode": "QRCODE_S2NSGF_1"
+    }
+  ],
+  "reports": {
+    "totalEvents": 12,
+    "totalUsers": 4,
+    "ticketsSold": 1220,
+    "checkInRate": 0.76
+  },
+  "featured": [
+    {
+      "id": "1"
+    },
+    {
+      "id": "2"
+    },
+    {
+      "id": "5"
+    },
+    {
+      "id": "11"
+    }
+  ]
+}
