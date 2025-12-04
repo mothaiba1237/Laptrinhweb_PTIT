@@ -42,7 +42,6 @@ export default function Header() {
     };
   }, []);
 
-  // Đóng dropdown khi click ra ngoài
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -63,7 +62,6 @@ export default function Header() {
     navigate("/login");
   };
 
-  // Cập nhật thông tin user
   const handleUpdateProfile = async () => {
     if (!name || !email) {
       setMessage("Vui lòng điền đủ thông tin!");

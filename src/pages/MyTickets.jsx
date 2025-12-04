@@ -24,7 +24,7 @@ export default function MyTickets() {
           ...t,
           eventTitle: event?.title || "Không xác định",
           date: event?.date || "",
-          quantity: 1, // mỗi vé 1
+          quantity: 1,
           status: t.status === "used" ? "Đã check-in" : "Chưa check-in",
         };
       });

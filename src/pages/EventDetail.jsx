@@ -72,7 +72,7 @@ export default function EventDetail() {
         show={showModal}
         onClose={() => setShowModal(false)}
         event={event}
-        onBookingSuccess={fetchEvent} // refresh số vé còn lại
+        onBookingSuccess={fetchEvent}
       />
     </div>
   );

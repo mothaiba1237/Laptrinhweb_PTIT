@@ -1,4 +1,21 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 export default function EventFilter({ onFilter }) {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const res = await axios.get("http://localhost:3000/categories");
+        setCategories(res.data);
+      } catch (error) {
+        console.error("Lỗi tải danh mục:", error);
+      }
+    };
+    fetchCategories();
+  }, []);
+
   return (
     <div className="bg-white shadow-md p-4 rounded-xl mb-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
       
@@ -14,9 +31,9 @@ export default function EventFilter({ onFilter }) {
         onChange={(e) => onFilter({ category: e.target.value })}
       >
         <option value="">Tất cả loại</option>
-        <option value="workshop">Workshop</option>
-        <option value="concert">Concert</option>
-        <option value="seminar">Seminar</option>
+        {categories.map((cat) => (
+          <option key={cat.id} value={cat.id}>{cat.name}</option>
+        ))}
       </select>
 
       <input

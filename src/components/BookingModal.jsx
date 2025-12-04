@@ -18,7 +18,6 @@ export default function BookingModal({ show, onClose, event }) {
     setLoading(true);
 
     try {
-      // Tạo order
       const newOrder = {
         userId: String(currentUser.id),
         eventId: String(event.id),
@@ -37,7 +36,6 @@ export default function BookingModal({ show, onClose, event }) {
 
       const savedOrder = await orderRes.json();
 
-      // Tạo vé cho từng quantity
       for (let i = 0; i < quantity; i++) {
         const newTicket = {
           eventId: String(event.id),
@@ -55,7 +53,7 @@ export default function BookingModal({ show, onClose, event }) {
       }
 
       alert("Đặt vé thành công!");
-      onClose(); // đóng modal
+      onClose();
     } catch (error) {
       console.error("Đặt vé thất bại:", error);
       alert("Đặt vé thất bại. Vui lòng thử lại.");

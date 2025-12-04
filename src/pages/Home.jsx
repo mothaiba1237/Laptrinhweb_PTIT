@@ -11,7 +11,6 @@ export default function Home() {
       const res = await fetch("http://localhost:3000/events?featured=true");
       const data = await res.json();
 
-      // Nếu thumbnail lỗi hoặc trống → thay bằng ảnh mặc định
       const fixedData = data.map((ev) => ({
         ...ev,
         thumbnail:
@@ -35,7 +34,6 @@ export default function Home() {
   return (
     <div className="home-container">
 
-      {/* Banner */}
       <div className="home-banner">
         <div className="banner-content">
           <h1>EventHub</h1>
@@ -44,7 +42,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Featured Events */}
       <h2 className="home-title">Sự kiện nổi bật</h2>
 
       <div className="event-grid">
